@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Tests</title>
+
+    <!--
+    * MIT License - Copyright (c) 2020 Moisés Alcocer
+    *
+    * contacto@ironwoods.es
+    * https://www.ironwoods.es
+    -->
+
+    <script src='../js/framework.js'></script>
+    <script src='../js/datatype-checks.js'></script>
+    <script src='../js/asserts.js'></script>
+
+    <script>
+        function testAssertArray()
+        {
+            const expectedGreens = 2;
+            const testData = [
+                undefined,
+                null,
+                1,
+                'ab',
+                {},
+                [],
+                [1, 2]
+            ];
+
+            runAndShowTestResults(assertArray, testData, expectedGreens);
+        }
+
+        function testAssertEmpty()
+        {
+            const expectedGreens = 3;
+            const testData = [
+                undefined,
+                null,
+                1,
+                '',
+                'xxx',
+                {},
+                [],
+                [1, 2]
+            ];
+
+            runAndShowTestResults(assertEmpty, testData, expectedGreens);
+        }
+
+        function testAssertEquals()
+        {
+            const expectedGreens = 6;
+            const resultsNumber  = 12;
+            let positiveResults  = 0;
+
+            let arr = [];
+            let str = '';
+            let obj = {};
+            assertEquals(null)    ? positiveResults++ : null;
+            assertEquals(1)       ? positiveResults++ : null;
+            assertEquals(1, 0)    ? positiveResults++ : null;
+            assertEquals(1, [])   ? positiveResults++ : null;
+            assertEquals(obj, []) ? positiveResults++ : null;
+            assertEquals(null, []) ? positiveResults++ : null;
+            assertEquals()        ? positiveResults++ : null;
+            assertEquals(null, null) ? positiveResults++ : null;
+            assertEquals(str, '') ? positiveResults++ : null;
+            assertEquals(1, 1)    ? positiveResults++ : null;
+            assertEquals(arr, []) ? positiveResults++ : null;
+            assertEquals(obj, {}) ? positiveResults++ : null;
+
+
+            showTestResults(
+                'assertEquals',
+                resultsNumber,
+                positiveResults,
+                expectedGreens
+            )
+        }
+
+        function testAssertFalse()
+        {
+            const expectedGreens = 1;
+            const testData = [
+                1,
+                'zzz',
+                true,
+                false
+            ];
+
+            runAndShowTestResults(assertFalse, testData, expectedGreens);
+        }
+
+        function testAssertTrue()
+        {
+            const expectedGreens = 1;
+            const testData = [
+                1,
+                'zzz',
+                true,
+                false
+            ];
+
+            runAndShowTestResults(assertTrue, testData, expectedGreens);
+        }
+
+
+        /***************************************************************
+         * Tests
+         *
+         */
+
+
+        if (confirm('Run the test: "testAssertArray"?')) {
+            testAssertArray();
+        }
+
+        if (confirm('Run the test: "testAssertEmpty"?')) {
+            testAssertEmpty();
+        }
+
+        if (confirm('Run the test: "testAssertEquals"?')) {
+            testAssertEquals();
+        }
+
+        if (confirm('Run the test: "testAssertFalse"?')) {
+            testAssertFalse();
+        }
+
+        if (confirm('Run the test: "testAssertTrue"?')) {
+            testAssertTrue();
+        }
+
+        /**/
+    </script>
+</head>
+<body>
+
+    <p><strong>Notice:</strong>
+        open the terminal to check the rest results</p>
+</body>
+</html>
