@@ -1,18 +1,18 @@
 # JS Asserts
 
-This is a **simple JS unitary test framework** based in the use of
-asserts and inspired by XUnit test frameworks that allow us check
+This is a **simple JS unitary test framework** based on the use of
+asserts and inspired by XUnit test frameworks that allow us to check
 functions over a modern web browser.
 
 
 The results are displayed as this
 
-    ![js ](https://user-images.githubusercontent.com/7187599/73694188-df826880-46d7-11ea-9f80-b216c051681d.png)
+![js ](https://user-images.githubusercontent.com/7187599/73694188-df826880-46d7-11ea-9f80-b216c051681d.png)
 
 
-or this other (when some error is founded)
+or this other (when some error is found)
 
-    ![salida-js-asserts](https://user-images.githubusercontent.com/7187599/73694190-df826880-46d7-11ea-9787-97e89da522d3.png)
+![salida-js-asserts](https://user-images.githubusercontent.com/7187599/73694190-df826880-46d7-11ea-9787-97e89da522d3.png)
 
 
 *This test framework was developed and tested over Chromium,
@@ -22,11 +22,11 @@ Versión 79.0.3945.79 (Build oficial), running on Ubuntu 18.04 (64 bits).*
 ## Instructions
 
 The tests are running in the web browser and the results displayed over
-the navigator terminal. Then, the unitary tests are writing in a simple HTML
+the navigator terminal. Then, the unitary tests are written in a simple HTML
 document follow the structure of the example files hosted in 'src/html/'
 and linked from the 'index.html'.
 
-To run the wrote tests, open the HTML file with the navigator and show
+To run the written tests, open the HTML file with the navigator and show
 the "Console" of the "developer tools".
 
 This framework (version 1.0.0) has the asserts:
@@ -60,7 +60,7 @@ The main framework, build-in, functions, from *'src/js/framework.js'*, are:
     2. An array with the data for the tests.
     3. A number of the expected positive results.
 
-    This function allow us test functions that receive one argument with boolean outputs.
+    This function allow us to test functions that receive one argument with boolean outputs.
 
     Internally use the *showTestResults* function to display the test results.
 
@@ -74,7 +74,7 @@ The main framework, build-in, functions, from *'src/js/framework.js'*, are:
     4. A number with the expected positive results.
     5. A string with error information to be printed.
 
-    This function help us to show test results and test functions
+    This function helps us to show test results and test functions
     that receive one or more arguments with boolean outputs
     (althought we can use it together with assert functions to test
     other output types functions).
