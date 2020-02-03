@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Tests</title>
+
+    <!--
+    * MIT License - Copyright (c) 2020 Moisés Alcocer
+    *
+    * contacto@ironwoods.es
+    * https://www.ironwoods.es
+    -->
+
+    <script src='../js/framework.js'></script>
+    <script src='../js/datatype-checks.js'></script>
+
+    <script>
+        function testCheckArray()
+        {
+            const expectedGreens = 2;
+            const totalTest  = 9;
+            let falseCounter = 0;
+            let trueCounter  = 0;
+            
+            checkArray()     ? trueCounter++ : falseCounter++;
+            checkArray(null) ? trueCounter++ : falseCounter++;
+            checkArray(1)    ? trueCounter++ : falseCounter++;
+            checkArray('')   ? trueCounter++ : falseCounter++;
+            checkArray('ab') ? trueCounter++ : falseCounter++;
+            checkArray({})   ? trueCounter++ : falseCounter++;
+            checkArray({"a": "asas"}) ? trueCounter++ : falseCounter++;
+            checkArray([])   ? trueCounter++ : falseCounter++;
+            checkArray([1, 2]) ? trueCounter++ : falseCounter++;
+
+            runAndShowTestResults(
+                checkArray, 
+                [
+                    undefined,
+                    null,
+                    1,
+                    '',
+                    'ab',
+                    {},
+                    {"a": "asas"},
+                    [],
+                    [1, 2]
+                ], 
+                expectedGreens
+            );
+        }
+
+        function testCheckObject()
+        {
+            const expectedGreens = 2;
+            const totalTest  = 9;
+            let falseCounter = 0;
+            let trueCounter  = 0;
+
+            checkObject()     ? trueCounter++ : falseCounter++;
+            checkObject(null) ? trueCounter++ : falseCounter++;
+            checkObject(1)    ? trueCounter++ : falseCounter++;
+            checkObject('')   ? trueCounter++ : falseCounter++;
+            checkObject('ab') ? trueCounter++ : falseCounter++;
+            checkObject({})   ? trueCounter++ : falseCounter++;
+            checkObject({"a": "asas"}) ? trueCounter++ : falseCounter++;
+            checkObject([])   ? trueCounter++ : falseCounter++;
+            checkObject([1, 2]) ? trueCounter++ : falseCounter++;
+
+            runAndShowTestResults(
+                checkObject,
+                [
+                    undefined,
+                    null,
+                    1,
+                    '',
+                    'ab',
+                    {},
+                    {"a": "asas"},
+                    [],
+                    [1, 2]
+                ], 
+                expectedGreens
+            );
+        }
+
+
+        /***************************************************************
+         * Tests
+         *
+         */
+
+        if (confirm('Run the test: "testCheckArray"?')) {
+            testCheckArray();
+        }
+        
+        if (confirm('Run the test: "testCheckObject"?')) {
+            testCheckObject();
+        }
+
+    </script>
+</head>
+<body>
+
+    <p><strong>Notice:</strong> 
+        open the terminal to check the rest results</p>
+</body>
+</html>
