@@ -5,6 +5,7 @@
  * https://www.ironwoods.es
  */
 
+// Aux.
 function getStrFrom(value)
 {
     switch (value) {

@@ -12,13 +12,15 @@ function assertArray(data)
 
 function assertArraySize(data, expectedSize)
 {
-    return (Array.isArray(data) && data.length === expectedSize);
+    return (data && Array.isArray(data) 
+        && data.length === expectedSize);
 }
 
 /**
  * Checks an empty String, Array or Object
  *
- * @param mixed     data
+ * @param  mixed     data
+ * @return boolean
  */
 function assertEmpty(data)
 {
@@ -52,8 +54,9 @@ function assertFalse(data)
  * Compare two data with NO strict checks for "arrays" and "objects":
  * only checks the type and size
  *
- * @param mixed     data
- * @param mixed     expected
+ * @param  mixed     data
+ * @param  mixed     expected
+ * @return boolean
  */
 function assertSoftEquals(data, expected)
 {
