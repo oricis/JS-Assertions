@@ -39,12 +39,22 @@ function runAndShowTestResults(
         testCounter++;
 
         const testData = data[i];
-        if (testedFunc(testData)) {
+        const result = testedFunc(testData);
+        if (result) {
             greenResultsNumber++;
+
         } else {
-            redOutputs = 'Testing "'+funcName+'()" - value: '
-                +getStrFrom(testData)+'\n'
-                +'Test number: '+testCounter+'\n';
+            redOutputs = 'Testing "' + funcName + '()" - value: ';
+
+            if (result === undefined) {
+
+                redOutputs += 'Test number: ' + testCounter
+                + ' return an "undefined"\n';
+
+            } else {
+                redOutputs += getStrFrom(testData)+'\n'
+                    +'Test number: '+testCounter+'\n';
+            }
         }
     }
 
@@ -74,14 +84,16 @@ function showTestResults(
 )
 {
     console.log('\n================================================');
-    console.log('Checked "'+testName+'()"');
+    console.log('Checked "' + testName + '()" ---> greenResultsNumber: ' + greenResultsNumber);
     console.log('Total tests: '+resultsNumber);
 
     if (greenResultsNumber === expectedGreenResultsNumber) {
         console.log('GREEN: 100%');
     } else {
-        const redPercentage = Math.round(
-            greenResultsNumber * 100 / resultsNumber, 2);
+        const redPercentage = (greenResultsNumber === 0)
+            ? 100
+            : Math.round(
+                greenResultsNumber * 100 / resultsNumber, 2);
         const greenPercentage = 100 - redPercentage;
 
         console.error('RED: ' + redPercentage + '%');
