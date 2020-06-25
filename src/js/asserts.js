@@ -12,7 +12,7 @@ function assertArray(data)
 
 function assertArraySize(data, expectedSize)
 {
-    return (data && Array.isArray(data) 
+    return (data && Array.isArray(data)
         && data.length === expectedSize);
 }
 
@@ -30,7 +30,7 @@ function assertEmpty(data)
         if (data === ''
             || Array.isArray(data) && data.length === 0
             || Object.entries(data).length === 0) {
-            
+
             return true;
         }
     }
@@ -50,6 +50,11 @@ function assertFalse(data)
     return (data === false);
 }
 
+function assertNumber(data)
+{
+    return checkNumber(data);
+}
+
 /**
  * Compare two data with NO strict checks for "arrays" and "objects":
  * only checks the type and size
@@ -67,7 +72,7 @@ function assertSoftEquals(data, expected)
 
     // Use NO strict comparison for "objects" -> type & size
     if (checkObject(data) && checkObject(expected)) {
-        return (Object.entries(data).length 
+        return (Object.entries(data).length
             === Object.entries(expected).length);
     }
 

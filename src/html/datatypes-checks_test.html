@@ -23,7 +23,7 @@
             const totalTest  = 9;
             let falseCounter = 0;
             let trueCounter  = 0;
-            
+
             checkArray()     ? trueCounter++ : falseCounter++;
             checkArray(null) ? trueCounter++ : falseCounter++;
             checkArray(1)    ? trueCounter++ : falseCounter++;
@@ -35,7 +35,7 @@
             checkArray([1, 2]) ? trueCounter++ : falseCounter++;
 
             runAndShowTestResults(
-                checkArray, 
+                checkArray,
                 [
                     undefined,
                     null,
@@ -46,7 +46,47 @@
                     {"a": "asas"},
                     [],
                     [1, 2]
-                ], 
+                ],
+                expectedGreens
+            );
+        }
+
+        function testCheckNumber()
+        {
+            const expectedGreens = 3;
+            const totalTest = 12;
+            let falseCounter = 0;
+            let trueCounter = 0;
+
+            checkNumber() ? trueCounter++ : falseCounter++;
+            checkNumber(null) ? trueCounter++ : falseCounter++;
+            checkNumber(-1) ? trueCounter++ : falseCounter++;   // true
+            checkNumber(0) ? trueCounter++ : falseCounter++;    // true
+            checkNumber(1) ? trueCounter++ : falseCounter++;    // true
+            checkNumber('1') ? trueCounter++ : falseCounter++;
+            checkNumber('') ? trueCounter++ : falseCounter++;
+            checkNumber('ab') ? trueCounter++ : falseCounter++;
+            checkNumber({}) ? trueCounter++ : falseCounter++;
+            checkNumber({ "a": "asas" }) ? trueCounter++ : falseCounter++;
+            checkNumber([]) ? trueCounter++ : falseCounter++;
+            checkNumber([1, 2]) ? trueCounter++ : falseCounter++;
+
+            runAndShowTestResults(
+                checkNumber,
+                [
+                    undefined,
+                    null,
+                    -1, // true
+                    0,  // true
+                    1,  // true
+                    '1',
+                    '',
+                    'ab',
+                    {},
+                    { "a": "asas" },
+                    [],
+                    [1, 2]
+                ],
                 expectedGreens
             );
         }
@@ -80,7 +120,7 @@
                     {"a": "asas"},
                     [],
                     [1, 2]
-                ], 
+                ],
                 expectedGreens
             );
         }
@@ -94,7 +134,11 @@
         if (confirm('Run the test: "testCheckArray"?')) {
             testCheckArray();
         }
-        
+
+        if (confirm('Run the test: "testCheckNumber"?')) {
+            testCheckNumber();
+        }
+
         if (confirm('Run the test: "testCheckObject"?')) {
             testCheckObject();
         }
@@ -103,7 +147,7 @@
 </head>
 <body>
 
-    <p><strong>Notice:</strong> 
+    <p><strong>Notice:</strong>
         open the terminal to check the rest results</p>
 </body>
 </html>

@@ -12,6 +12,11 @@ function checkArray(data)
         && Array.isArray(data));
 }
 
+function checkNumber(data)
+{
+    return (typeof data === 'number');
+}
+
 function checkObject(data)
 {
     return (data !== null
