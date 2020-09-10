@@ -24,3 +24,7 @@ function checkObject(data)
         && ! Array.isArray(data));
 }
 
+function checkString(data) {
+    return (data !== null
+        && typeof (data) === 'string');
+}

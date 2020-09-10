@@ -42,7 +42,9 @@ This framework (version 1.0.0) has the asserts:
 Other useful functions are:
 
     - checkArray
+    - checkNumber
     - checkObject
+    - checkString
 
 All these listed functions have a return of type boolean and can be used
 independently.
