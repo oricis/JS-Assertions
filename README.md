@@ -16,7 +16,7 @@ or this other (when some error is found)
 
 
 *This test framework was developed and tested over Chromium,
-Versión 79.0.3945.79 (Build oficial), running on Ubuntu 18.04 (64 bits).*
+Versión 79.0.3945.79 (Build official), running on Ubuntu 18.04 (64 bits).*
 
 ***
 ## Instructions
@@ -45,7 +45,7 @@ Other useful functions are:
     - checkObject
 
 All these listed functions have a return of type boolean and can be used
-independenly.
+independently.
 
 
 The main framework, build-in, functions, from *'src/js/framework.js'*, are:
@@ -66,17 +66,17 @@ The main framework, build-in, functions, from *'src/js/framework.js'*, are:
 
 
 ### Use of "showTestResults()"
-    This function need four arguments and can receive a fift (optional). These are:
+    This function need four arguments and can receive a fifth (optional). These are:
 
     1. The name of the function to check.
-    2. The number of tests will be runned.
+    2. The number of tests will run.
     3. The number of the positive results.
     4. A number with the expected positive results.
     5. A string with error information to be printed.
 
     This function helps us to show test results and test functions
     that receive one or more arguments with boolean outputs
-    (althought we can use it together with assert functions to test
+    (although we can use it together with assert functions to test
     other output types functions).
 
 ***
