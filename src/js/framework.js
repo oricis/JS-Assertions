@@ -30,6 +30,11 @@ function runAndShowTestResults(
     expectedGreenResultsNumber
 )
 {
+    const twoArgsAssertFunctions = [
+        'assertArraySize',
+        'assertEquals',
+        'assertSoftEquals',
+    ];
     const funcName = testedFunc.name;
     const resultsNumber = data.length;
     let redOutputs = '';
@@ -40,7 +45,9 @@ function runAndShowTestResults(
         testCounter++;
 
         const testData = data[i];
-        const result = testedFunc(testData);
+        const result = (twoArgsAssertFunctions.includes(funcName))
+            ? testedFunc(testData, data[++i])
+            : testedFunc(testData);
         if (result) {
             greenResultsNumber++;
 
