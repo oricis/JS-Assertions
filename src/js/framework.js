@@ -32,6 +32,7 @@ function runAndShowTestResults(
 {
     const funcName = testedFunc.name;
     const resultsNumber = data.length;
+    let redOutputs = '';
 
     let greenResultsNumber = 0;
     let testCounter = 0;
