@@ -50,6 +50,11 @@ function assertFalse(data)
     return (data === false);
 }
 
+function assertNull(data)
+{
+    return checkNull(data);
+}
+
 function assertNumber(data)
 {
     return checkNumber(data);

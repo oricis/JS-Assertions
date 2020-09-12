@@ -12,9 +12,16 @@ function checkArray(data)
         && Array.isArray(data));
 }
 
+
+function checkNull(data)
+{
+    return (typeof data !== 'undefined' &&
+        (typeof data !== 'object' || !data));
+}
+
 function checkNumber(data)
 {
-    return (typeof data === 'number');
+    return (typeof (data) === 'number');
 }
 
 function checkObject(data)

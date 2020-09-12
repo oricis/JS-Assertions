@@ -29,19 +29,22 @@ and linked from the 'index.html'.
 To run the written tests, open the HTML file with the navigator and show
 the "Console" of the "developer tools".
 
-This framework (version 1.0.0) has the asserts:
+This framework (version 1.1.0) has the asserts:
 
     - assertArray
     - assertArraySize
     - assertEmpty
     - assertEquals
     - assertFalse
+    - assertNull
+    - assertNumber
     - assertSoftEquals
     - assertTrue
 
 Other useful functions are:
 
     - checkArray
+    - checkNull
     - checkNumber
     - checkObject
     - checkString
