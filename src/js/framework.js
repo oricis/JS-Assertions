@@ -56,12 +56,13 @@ function runAndShowTestResults(
 
             if (result === undefined) {
 
-                redOutputs += 'Test number: ' + testCounter
-                + ' return an "undefined"\n';
+                redOutputs += 'Test number: '
+                    + testCounter
+                    + ' return an "undefined"\n';
 
             } else {
-                redOutputs += getStrFrom(testData)+'\n'
-                    +'Test number: '+testCounter+'\n';
+                redOutputs += getStrFrom(testData) + '\n'
+                    + 'Test number: ' + testCounter + '\n';
             }
         }
     }
@@ -92,11 +93,12 @@ function showTestResults(
 )
 {
     console.log('\n================================================');
-    console.log('Checked "' + testName + '()" ---> greenResultsNumber: ' + greenResultsNumber);
-    console.log('Total tests: '+resultsNumber);
+    console.log('Checked "' + testName + '()" ---> greenResultsNumber: '
+        + '%c ' + greenResultsNumber, 'color: #2ba029; font-weight: 900');
+    console.log('Total tests: ' + resultsNumber);
 
     if (greenResultsNumber === expectedGreenResultsNumber) {
-        console.log('GREEN: 100%');
+        console.log('%c GREEN: 100%', 'color: #368700');
     } else {
         const redPercentage = (greenResultsNumber === 0)
             ? 100
@@ -109,7 +111,7 @@ function showTestResults(
             console.error(redOutputs);
         }
         console.log('------------------------------------------------');
-        console.log('GREEN: ' + greenPercentage + '%');
+        console.log('%c GREEN: ' + greenPercentage + '%', 'color: #6f753a');
     }
 
     console.log('================================================\n\n');
