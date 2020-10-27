@@ -29,7 +29,7 @@ and linked from the 'index.html'.
 To run the written tests, open the HTML file with the navigator and show
 the "Console" of the "developer tools".
 
-This framework (version 1.1.0) has the asserts:
+This framework (version 1.2.0) has the asserts:
 
     - assertArray
     - assertArraySize
@@ -49,29 +49,35 @@ Other useful functions are:
     - checkObject
     - checkString
 
-All these listed functions have a return of type boolean and can be used
-independently.
+All the functions have a boolean return type and can be used independently.
 
 
 The main framework, build-in, functions, from *'src/js/framework.js'*, are:
 
-    - runAndShowTestResults
-    - showTestResults
+    - runAndShowTestResults()
+    - showTestResult()
+    - showTestResults()
 
 ### Use of "runAndShowTestResults()"
-    This function receive three arguments:
+    This function receives three arguments:
 
     1. The function to check.
     2. An array with the data for the tests.
     3. A number of the expected positive results.
 
-    This function allow us to test functions that receive one argument with boolean outputs.
+    This function allow us to test functions that receive one argument
+    with boolean outputs.
 
     Internally use the *showTestResults* function to display the test results.
 
+### Use of "showTestResult()"
+    This function needs two params: the total number of tests and the
+    passed number of tests to show a trace "green" or "red" depending
+    of the coincidence.
 
 ### Use of "showTestResults()"
-    This function need four arguments and can receive a fifth (optional). These are:
+    This function needs four arguments and can receive a fifth (optional).
+    These are:
 
     1. The name of the function to check.
     2. The number of tests will run.
@@ -87,7 +93,7 @@ The main framework, build-in, functions, from *'src/js/framework.js'*, are:
 ***
 ## About
 
-This development began in february of 2020 by ** Moisés Alcocer**.
+This development started at February of 2020 by ** Moisés Alcocer**.
 
 To known more email me: contacto@ironwoods.es or visit my website:
 https://www.ironwoods.es
