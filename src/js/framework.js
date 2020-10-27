@@ -77,6 +77,33 @@ function runAndShowTestResults(
 }
 
 /**
+ * Show test results trace
+ *
+ * @param  number   totalTests
+ * @param  number   greenTests
+ */
+function showTestsResult(totalTests, greenTests) {
+    if (greenTests === totalTests) {
+        console.log('\n%c---------------------------------------------',
+            'color: ' + cGreen);
+        console.log('%c>>> Passed 100% / ' + totalTests + ' are OK!',
+            'color: ' + cGreen + '; font-weight: 900');
+        console.log('\n%c---------------------------------------------',
+            'color: ' + cGreen);
+
+        return
+    }
+    console.log('\n%c---------------------------------------------',
+        'color: ' + cRed);
+    console.log('%c>>> Some tests failed!',
+        'color: ' + cRed + '; font-weight: 900');
+    console.log('Total tests: ' + totalTests
+        + ' / Passed: ' + greenTests);
+    console.log('%c---------------------------------------------',
+        'color: ' + cRed);
+}
+
+/**
  * Show test results
  *
  * @param  string   testName
