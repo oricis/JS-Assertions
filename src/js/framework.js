@@ -82,7 +82,10 @@ function runAndShowTestResults(
  * @param  number   totalTests
  * @param  number   greenTests
  */
-function showTestsResult(totalTests, greenTests) {
+function showTestsResult(totalTests, greenTests)
+{
+    const cGreen = '#2ba029';
+    const cRed = '#fa0808';
     if (greenTests === totalTests) {
         console.log('\n%c---------------------------------------------',
             'color: ' + cGreen);
