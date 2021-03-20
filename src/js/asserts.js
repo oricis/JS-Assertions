@@ -16,6 +16,25 @@ function assertArraySize(data, expectedSize)
         && data.length === expectedSize);
 }
 
+function assertArrayEquals(arr1, arr2, strict = false) // bool
+{
+    if (!isArray(arr1) || !isArray(arr2)) {
+        return false;
+    }
+    strict = strict ? strict : false;
+
+    arr1 = (strict)
+        ? [...new Set(arr1.flat())]
+        : [...new Set(arr1.flat().sort())]; // ignore content positions
+
+    arr2 = (strict)
+        ? [...new Set(arr2.flat())]
+        : [...new Set(arr2.flat().sort())]; // ignore content positions
+
+
+    return (JSON.stringify(arr1) === JSON.stringify(arr2));
+}
+
 /**
  * Checks an empty String, Array or Object
  *
@@ -38,8 +57,10 @@ function assertEmpty(data)
     return false;
 }
 
-function assertEquals(data, expected, strict=false)
+function assertEquals(data, expected, strict = false)
 {
+    strict = strict ? strict : false;
+
     return (strict)
         ? (data === expected)
         : assertSoftEquals(data, expected);

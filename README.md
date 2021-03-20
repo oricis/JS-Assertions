@@ -1,4 +1,4 @@
-# JS Asserts
+# JS Asserts - v.1.3.0
 
 This is a **simple JS unitary test framework** based on the use of
 asserts and inspired by XUnit test frameworks that allow us to check
@@ -15,9 +15,6 @@ or this other (when some error is found)
 ![salida-js-asserts](https://user-images.githubusercontent.com/7187599/73694190-df826880-46d7-11ea-9787-97e89da522d3.png)
 
 
-*This test framework was developed and tested over Chromium,
-Versión 79.0.3945.79 (Build official), running on Ubuntu 18.04 (64 bits).*
-
 ***
 ## Instructions
 
@@ -29,19 +26,21 @@ and linked from the 'index.html'.
 To run the written tests, open the HTML file with the navigator and show
 the "Console" of the "developer tools".
 
-This framework (version 1.2.0) has the asserts:
+ * Available asserts:
 
-    - assertArray()      // bool
-    - assertArraySize()  // bool
-    - assertEmpty()      // bool
-    - assertEquals()     // bool
-    - assertFalse()      // bool
-    - assertNull()       // bool
-    - assertNumber()     // bool
-    - assertSoftEquals() // bool
-    - assertTrue()       // bool
+    - assertArray()       // bool
+    - assertArrayEquals() // bool
+    - assertArraySize()   // bool
+    - assertEmpty()       // bool
+    - assertEquals()      // bool
+    - assertFalse()       // bool
+    - assertNull()        // bool
+    - assertNumber()      // bool
+    - assertSoftEquals()  // bool
+    - assertTrue()        // bool
 
-Other useful functions (type checkers) are:
+
+ * Available functions to check types:
 
     - checkArray()  | isArray()  // bool
     - checkNull()   | isNull()   // bool
