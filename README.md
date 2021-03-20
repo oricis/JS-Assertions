@@ -31,32 +31,32 @@ the "Console" of the "developer tools".
 
 This framework (version 1.2.0) has the asserts:
 
-    - assertArray
-    - assertArraySize
-    - assertEmpty
-    - assertEquals
-    - assertFalse
-    - assertNull
-    - assertNumber
-    - assertSoftEquals
-    - assertTrue
+    - assertArray()      // bool
+    - assertArraySize()  // bool
+    - assertEmpty()      // bool
+    - assertEquals()     // bool
+    - assertFalse()      // bool
+    - assertNull()       // bool
+    - assertNumber()     // bool
+    - assertSoftEquals() // bool
+    - assertTrue()       // bool
 
-Other useful functions are:
+Other useful functions (type checkers) are:
 
-    - checkArray
-    - checkNull
-    - checkNumber
-    - checkObject
-    - checkString
+    - checkArray()  | isArray()  // bool
+    - checkNull()   | isNull()   // bool
+    - checkNumber() | isNumber() // bool
+    - checkObject() | isObject() // bool
+    - checkString() | isString() // bool
 
 All the functions have a boolean return type and can be used independently.
 
 
 The main framework, build-in, functions, from *'src/js/framework.js'*, are:
 
-    - runAndShowTestResults()
-    - showTestResult()
-    - showTestResults()
+    - runAndShowTestResults() // void
+    - showTestResult()        // void
+    - showTestResults()       // void
 
 ### Use of "runAndShowTestResults()"
     This function receives three arguments:
