@@ -7,9 +7,7 @@
 
 function checkArray(data)
 {
-    return (data !== null
-        && typeof (data) === 'object'
-        && Array.isArray(data));
+    return (Array.isArray(data));
 }
 
 
